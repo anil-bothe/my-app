@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-app';
+  errMsg=""
+  msg = ''
+  logMessage(value) {
+    this.msg = value;
+  }
 }

@@ -1,0 +1,28 @@
+<form (ngSubmit)="appendItem(myForm)" #myForm="ngForm">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employees; let i = index">
+        <td scope="row">{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>
+          <a href="javascript:void(0)" class="text-danger" (click)="deleteItem(i)"><i class="fa fa-trash-alt"></i></a>
+        </td>
+      </tr>
+      <tr>
+        <td> <input type="number" name="id" ngModel></td>
+        <td><input type="text" name="name" ngModel></td>
+        <td><input type="nubmer" name="age" ngModel></td>
+        <td><button type="submit" class="btn btn-primary btn-sm">Save</button></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
